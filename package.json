@@ -1,0 +1,45 @@
+{
+  "name": "graphqlreactnative",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios --simulator='iPhone 12 mini'",
+    "ios-device": "react-native run-ios --device",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
+    "pods-install": "cd ios && pod install; cd ..",
+    "clean": "watchman watch-del-all; rm -rf yarn.lock package-lock.json node_modules android/app/build ios/Pods ios/Podfile.lock /tmp/metro-*",
+    "clean-xcode": "rm -rf ~/Library/Developer/Xcode/DerivedData",
+    "reinit": "npm run clean && yarn && npm run pods-install",
+    "reinit-ios": "npm run reinit && npm run ios",
+    "reinit-android": "npm run reinit && npm run android"
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "1.12.1",
+    "@react-native-community/netinfo": "^6.0.0",
+    "@react-navigation/native": "6.0.2",
+    "@react-navigation/stack": "6.0.7",
+    "graphql-react-sdk": "file:../graphql-react-sdk",
+    "react": "17.0.2",
+    "react-native": "0.65.0",
+    "react-native-gesture-handler": "1.10.3",
+    "react-native-safe-area-context": "3.3.0",
+    "react-native-safe-area-view": "1.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.15.0",
+    "@babel/runtime": "7.15.3",
+    "@react-native-community/eslint-config": "3.0.0",
+    "babel-jest": "27.0.6",
+    "eslint": "7.32.0",
+    "jest": "27.0.6",
+    "metro-react-native-babel-preset": "0.66.2",
+    "react-native-codegen": "0.0.7",
+    "react-test-renderer": "17.0.2"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
